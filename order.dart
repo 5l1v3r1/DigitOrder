@@ -39,12 +39,13 @@ void bestNumber(List<int> current, List<int> remaining, int base, cbFunc cb) {
 
 void main() {
   for (int i = 2; i < 30; i++) {
+    print('trying base $i');
     List<int> list = new List();
     for (int j = 0; j < i; ++j) {
       list.add(j);
     }
     bestNumber([], list, i, (list) {
-      print('base $i list is $list');
+      print('got solution $list');
     });
   }
 }
