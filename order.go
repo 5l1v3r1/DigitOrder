@@ -41,7 +41,7 @@ func BestNumber(current []int, remaining []int, base int) {
 		newCur := append(DupList(current), x)
 		newRem := DupList(remaining)
 		newRem[i] = newRem[len(newRem)-1]
-		newRem = newRem[0:len(newRem)-1]
+		newRem = newRem[0 : len(newRem)-1]
 		BestNumber(newCur, newRem, base)
 	}
 }
@@ -58,7 +58,7 @@ func main() {
 		out = make(chan []int)
 		// Run a goroutine for every starting digit
 		for j := 1; j < i; j++ {
-			remaining := make([]int, 0, i - 1)
+			remaining := make([]int, 0, i-1)
 			current := make([]int, 1)
 			current[0] = j
 			for x := 1; x < i; x++ {
